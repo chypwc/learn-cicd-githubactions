@@ -59,4 +59,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}# or specific "vX.X.X" version tag for this action
+          token: ${{ secrets.GITHUB_TOKEN }} # or specific "vX.X.X" version tag for this action
