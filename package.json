@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://chypwc.github.io/learn-cicd-githubactions",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
