@@ -17,19 +17,8 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
-      - name: setup node js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: Setup Node and install depencencies
+        uses: ./.github/actions/setupnode
       - name: Run Tests
         run: npm run test
   build:
@@ -38,19 +27,8 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v4
-      - name: setup node js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: Setup Node and install depencencies
+        uses: ./.github/actions/setupnode
       - name: Build project
         run: npm run build
       - name: Upload dist artifact
