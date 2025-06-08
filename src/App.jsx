@@ -6,7 +6,7 @@ function App() {
     <>
       <h1>Github Actions</h1>
       <h2>For beginners v2</h2>
-      <h2>With sonar test.</h2>
+      <h2>A new feature test.</h2>
     </>
   )
 }
