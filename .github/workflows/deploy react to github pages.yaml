@@ -1,13 +1,13 @@
 name: Deploy to Github pages
 
 on:
-  #   push:
-  #     branches:
-  #       - main
-  #       - "feature/**"
-  #     paths-ignore:
-  #       - README.md
-  #       - ".github/workflows/*"
+    push:
+      branches:
+        - main
+        - "feature/**"
+      paths-ignore:
+        - README.md
+        - ".github/workflows/*"
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: dist
